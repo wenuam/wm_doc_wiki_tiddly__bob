@@ -1,0 +1,54 @@
+title: $:/plugins/OokTech/Bob/Documentation/http-api
+caption: HTTP API
+tags: [[Bob Documentation]]
+
+To use the http api you have to enable the parts you want in the settings.
+Currently this has to be done manually.
+In the `API` section you can enable or disable fetching, pushing, deleting and
+creating independently.
+
+Fetching is getting tiddlers directly using the API, pushing is adding tiddlers
+to a wiki using the api, delete is deleting both tiddlers and wikis, create is
+creating new wikis and renaming wikis.
+
+```
+"API": {
+  "enableFetch": "no",
+  "enablePush": "no",
+  "enableDelete": "no",
+  "enableCreate": "no",
+  "pluginLibrary": "yes"
+}
+```
+
+The http api has the following routes:
+
+<$list
+  filter='[[$:/plugins/OokTech/Bob]plugintiddlers[]tag[HTTP API]each[verb]get[verb]sort[]]'
+  variable='verb'
+>
+  <h2>
+    <<verb>>
+  </h2>
+
+<hr>
+
+  <ul>
+  <$list
+    filter='[[$:/plugins/OokTech/Bob]plugintiddlers[]tag[HTTP API]verb<verb>sort[]]'
+  >
+    <li>
+      <$link
+        to=<<currentTiddler>>
+      >
+        <$view
+          field='route'
+        />
+      </$link> -
+      <$view
+        field='description'
+      />
+    </li>
+  </$list>
+  </ul>
+</$list>

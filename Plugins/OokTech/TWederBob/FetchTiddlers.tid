@@ -1,0 +1,89 @@
+title: $:/plugins/OokTech/TWederBob/FetchTiddlers
+
+Pick Server:
+<$select
+  tiddler='$:/state/TWederBob/FetchTiddlers/SelectedServer'
+>
+  <$list
+    filter='[tag[Bob Tiddler Server]]'
+  >
+    <option
+      value={{!!url}}
+    >
+      <$view
+        field='caption'
+      >
+        <$view
+          field='title'
+        />
+      </$view>
+    </option>
+  </$list>
+  <option
+    value='https://ooktech.xyz:8443'
+  >
+    OokTech Public Test
+  </option>
+</$select>
+or add a server:
+
+Server Name: <$edit-text
+  tiddler='$:/temp/twederbob/addserver'
+  field='server_name'
+/>
+
+Server URL: <$edit-text
+  tiddler='$:/temp/twederbob/addserver'
+  field='server_url'
+/>
+
+<$button>
+  Add Server
+  <$list
+    filter='[[$:/temp/twederbob/addserver]has[server_url]has[server_name]get[server_name]addprefix[$:/data/TWederBob/server/]]'
+    variable=serverTiddlerName
+  >
+    <$action-setfield
+      $tiddler=<<serverTiddlerName>>
+      tags="""[[Bob Tiddler Server]]"""
+      url={{$:/temp/twederbob/addserver!!server_url}}
+      caption={{$:/temp/twederbob/addserver!!server_name}}
+    />
+    <$action-setfield
+      $tiddler='$:/temp/twederbob/addserver'
+      server_name=''
+      server_url=''
+    />
+  </$list>
+</$button>
+
+Filter:
+<$edit-text
+  class='tc-edit-texteditor'
+  tiddler='$:/state/TWederBob/FetchTiddlers/Filter'
+  field='filter'
+/>
+
+From wiki:
+<$edit-text
+  class='tc-edit-texteditor'
+  tiddler='$:/temp/twederbob/fromwiki'
+  field='from_wiki'
+  placeholder='RootWiki'
+/>
+
+<$button>
+  Fetch Tiddlers
+  <$reveal
+    type='nomatch'
+    state='$:/state/TWederBob/FetchTiddlers/SelectedServer'
+    text=''
+  >
+    <$action-interServerMessage
+      url={{$:/state/TWederBob/FetchTiddlers/SelectedServer}}
+      requestType='fetch'
+      filter={{$:/state/TWederBob/FetchTiddlers/Filter!!filter}}
+      fromWiki={{$:/temp/twederbob/fromwiki!!from_wiki}}
+    />
+  </$reveal>
+</$button>

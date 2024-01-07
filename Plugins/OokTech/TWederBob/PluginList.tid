@@ -1,0 +1,52 @@
+title: $:/plugins/OokTech/TWederBob/GetPlugins
+
+Pick Server:
+<$select
+  tiddler='$:/state/TWederBob/GetPlugins/SelectedServer'
+>
+  <$list
+    filter='[tag[Bob Plugin Server]]'
+  >
+    <option
+      value={{!!url}}
+    >
+      <$view
+        field='caption'
+      >
+        <$view
+          field='title'
+        />
+      </$view>
+    </option>
+  </$list>
+  <option
+    value='https://ooktech.xyz:8443'
+  >
+    OokTech Public Test
+  </option>
+</$select>
+
+<$button>
+  Get Plugin List
+  <$reveal
+    type='nomatch'
+    state='$:/state/TWederBob/GetPlugins/SelectedServer'
+    text=''
+  >
+    <$action-interServerMessage
+      url={{$:/state/TWederBob/GetPlugins/SelectedServer}}
+      requestType='listPlugins'
+    />
+  </$reveal>
+</$button>
+<$button>
+  Clear list
+  <$action-deletetiddler
+    $filter='[prefix[$:/pluginData/Listing/]]'
+  />
+</$button>
+
+<$list
+  filter='[prefix[$:/pluginData/Listing/]]'
+  template='$:/plugins/OokTech/TWederBob/PluginListItem'
+/>

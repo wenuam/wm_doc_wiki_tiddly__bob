@@ -1,0 +1,19 @@
+title: $:/plugins/OokTech/Bob/Documentation/HTTPAPI/get-wikis-list
+tags: [[HTTP API]]
+verb: GET
+route: /api/wikis/list
+response: A JSON object containing a list of available wikis
+parameters:
+description: get a list of available wikis
+
+The returned object is in the form:
+
+```
+{
+  wikis: ["Wiki1", "Wiki2"]
+}
+```
+
+Example:
+
+* `/api/list/wikis`

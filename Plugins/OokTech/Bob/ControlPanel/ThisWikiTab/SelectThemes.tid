@@ -1,0 +1,163 @@
+title: $:/plugins/OokTech/Bob/SelectThemes
+caption: Manage Themes
+
+<$button>
+  Save Theme Selection
+  <$action-websocketmessage
+    $type='updateTiddlyWikiInfo'
+    themeList={{$:/Bob/ActiveThemeList!!list}}
+  />
+  <$action-websocketmessage
+    $type='unloadWiki'
+    wikiName={{$:/WikiName}}
+  />
+</$button> <<helpButton "$:/plugins/OokTech/Bob/AboutSavePluginSelection">>
+
+<a href='javascript:history.go(0)'>Refresh Page</a> <<helpButton "$:/plugins/OokTech/Bob/AboutRefreshPage">>
+
+<br>
+Select Theme Author: <$select
+  tiddler='$:/state/Bob/SelectedAuthor'
+  default='all'
+>
+  <option
+    value='all'
+  >
+    All
+  </option>
+  <$list
+    filter='[[$:/Bob/AvailableThemeList]indexes[]splitbefore[/]]'
+    variable='themeAuthor'
+  >
+    <option>
+      <<themeAuthor>>
+    </option>
+  </$list>
+</$select> <<helpButton "$:/plugins/OokTech/Bob/AboutSelectPluginAuthor">>
+
+Search: <$edit-text
+  tiddler='$:/state/Bob/SearchThemes'
+  default=''
+  placeholder='Search Themes'
+  tag='input'
+/>
+
+<$list
+  filter='[[$:/state/Bob/SelectedAuthor]has[text]!text[all]]'
+  variable='unused'
+>
+  <$set
+    name=themeAuthor
+    value={{$:/state/Bob/SelectedAuthor}}
+  >
+    <h2><$text text=<<themeAuthor>>></$text></h2>
+    <$list
+      filter='[[$:/Bob/AvailableThemeList]indexes[]search{$:/state/Bob/SearchThemes}prefix<themeAuthor>]'
+    >
+      <$list
+        filter='[list[$:/Bob/ActiveThemeList]match<currentTiddler>]'
+        emptyMessage="""
+        <$button
+          class='tc-btn-invisible'
+        >
+          <input
+            type='checkbox'
+          />
+          <b>
+            <$view
+              field='title'
+            />
+          </b>
+          <$action-listops
+            $tiddler='$:/Bob/ActiveThemeList'
+            $subfilter='+[append<currentTiddler>]'
+          />
+        </$button>
+        :
+        <$view tiddler='$:/Bob/AvailableThemeList' index=<<currentTiddler>>/>
+        <br>"""
+      >
+        <$button
+          class='tc-btn-invisible'
+        >
+          <input
+            type='checkbox'
+            checked
+          />
+          <b>
+            <$view
+              field='title'
+            />
+          </b>
+          <$action-listops
+            $tiddler='$:/Bob/ActiveThemeList'
+            $subfilter='+[remove<currentTiddler>]'
+          />
+        </$button>
+        :
+        <$view tiddler='$:/Bob/AvailableThemeList' index=<<currentTiddler>>/>
+        <br>
+      </$list>
+    </$list>
+  </$set>
+</$list>
+
+<$list
+  filter='[[$:/state/Bob/SelectedAuthor]text[all]][[$:/state/Bob/SelectedAuthor]!has[text]] +[limit[1]]'
+  variable='unused'
+>
+  <$list
+    filter='[[$:/Bob/AvailableThemeList]indexes[]splitbefore[/]]'
+    variable='themeAuthor'
+  >
+    <h2><$text text=<<themeAuthor>>></$text></h2>
+    <$list
+      filter='[[$:/Bob/AvailableThemeList]indexes[]search{$:/state/Bob/SearchThemes}prefix<themeAuthor>]'
+    >
+      <$list
+        filter='[list[$:/Bob/ActiveThemeList]match<currentTiddler>]'
+        emptyMessage="""
+        <$button
+          class='tc-btn-invisible'
+        >
+          <input
+            type='checkbox'
+          />
+          <b>
+            <$view
+              field='title'
+            />
+          </b>
+          <$action-listops
+            $tiddler='$:/Bob/ActiveThemeList'
+            $subfilter='+[append<currentTiddler>]'
+          />
+        </$button>
+        :
+        <$view tiddler='$:/Bob/AvailableThemeList' index=<<currentTiddler>>/>
+        <br>"""
+      >
+        <$button
+          class='tc-btn-invisible'
+        >
+          <input
+            type='checkbox'
+            checked
+          />
+          <b>
+            <$view
+              field='title'
+            />
+          </b>
+          <$action-listops
+            $tiddler='$:/Bob/ActiveThemeList'
+            $subfilter='+[remove<currentTiddler>]'
+          />
+        </$button>
+        :
+        <$view tiddler='$:/Bob/AvailableThemeList' index=<<currentTiddler>>/>
+        <br>
+      </$list>
+    </$list>
+  </$list>
+</$list>

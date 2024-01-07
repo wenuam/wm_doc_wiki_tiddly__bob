@@ -1,0 +1,12 @@
+author: Gerald <gera2ld@live.com>
+core-version: >=5.0.8
+dependents: 
+description: Syntax highlight with PrismJS
+list: readme
+name: Prism
+plugin-type: plugin
+revision: 0
+source: https://github.com/gera2ld/tw-prism
+title: $:/plugins/gera2ld/prism
+type: application/json
+version: 0.1.0

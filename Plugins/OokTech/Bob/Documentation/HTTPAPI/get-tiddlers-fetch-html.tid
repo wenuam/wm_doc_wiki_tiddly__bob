@@ -1,0 +1,16 @@
+title: $:/plugins/OokTech/Bob/Documentation/HTTPAPI/get-tiddlers-fetch-html
+tags: [[HTTP API]]
+verb: GET
+route: /api/tiddlers/fetch/html/:wiki
+response: The rendered html of the requested tiddler
+parameters: `tiddler`
+description: get the rendered html of a tiddler
+
+Note: Because of how Bob handles different wikis, this doesn't render the
+static css in the expected way.
+
+Get the rendered html version of a tiddler.
+
+Example:
+
+* `/api/tiddlers/fetch/html/SomeWiki?tiddler=tiddlerTitle`

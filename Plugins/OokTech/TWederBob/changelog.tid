@@ -1,0 +1,36 @@
+title: $:/plugins/OokTech/TWederBob/changelog
+
+!!Version 0.1.3
+
+* Cleaned up coding style
+* Add a way to add servers easily to the fetch tiddlers utility
+
+!!Version 0.1.2
+
+* Fix a bug that broke everything
+
+!!Version 0.1.1
+
+* Add noPreview option to prevent the import preview tiddler from opening
+
+!!Version 0.1.0
+
+
+!!Version 0.0.7
+
+* Fix the server urls so they don't have the api component
+
+!!Version 0.0.7
+
+* Add changelog
+* Add a `url` and `wiki` field to preview tiddlers
+
+!! Initial state
+
+* Fetch tiddlers from bob servers by filter
+* Fetch a preview list from bob servers by filter
+* Get list of plugins available on a server
+* Fetch a plugin from a server
+* Rename fetched tiddlers using a transform filter
+* Push tiddlers to servers that accept them
+* Include an access token with a request to fetch/push tiddlers with authentication
