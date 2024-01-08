@@ -10,4 +10,4 @@ source: https://github.com/kookma/TW-Shiraz
 tags: 
 title: $:/plugins/kookma/shiraz-callout
 type: application/json
-version: 0.7.0
+version: 0.8.0

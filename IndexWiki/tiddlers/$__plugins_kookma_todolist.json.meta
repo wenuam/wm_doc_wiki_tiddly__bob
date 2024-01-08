@@ -8,4 +8,4 @@ source: https://github.com/kookma/TW-Todolist
 tags: 
 title: $:/plugins/kookma/todolist
 type: application/json
-version: 1.4.2
+version: 1.5.0

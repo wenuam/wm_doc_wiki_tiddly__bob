@@ -61,7 +61,7 @@ The layout and theme may be modified, many things are configurable through the "
 
 ### Plugins
 
-The server can be extended with plugins ([officials] and [community] created). Of course the size of the [HTML] file grows with each addition, data or plugin, making it a bit less "portable" (ie. mails).
+The server can be extended with plugins ([officials] and [community] created, or [other]). Of course the size of the [HTML] file grows with each addition, data or plugin, making it a bit less "portable" (ie. mails).
 
 Some plugins also have their own tutorials :
 
@@ -69,6 +69,7 @@ Some plugins also have their own tutorials :
 
 [officials]: https://tiddlywiki.com/static/OfficialPlugins.html
 [community]: https://tiddlywiki.com/static/Community%2520Plugins.html
+[other]: https://tiddlywiki.com/static/Other%2520Resources.html
 
 #### Installation
 
@@ -88,9 +89,17 @@ Here's a quick list of installed plugins that provide many features on-top of th
 * Core (5.3.1) : TiddlyWiki5 core
 * Bob (1.7.5) : A plugin that real-time syncing between wiki and server, among other things
 
+* CodeMirror (5.3.3) : CodeMirror editor 
 * CodeMirror Enhanced (0.1.4) : Your must-have CodeMirror enhancement plugin!
 * CodeMirror Themes (0.0.1) : Tons of codemirror themes for TiddlyWiki
+* context-menu-plugin (0.8.1) : Configurable context menus for tiddlers
+* ContextPlugin (2.1.0) : Context search - provides visual highlight of search results 
+* Core (5.3.3) : TiddlyWiki5 core 
+* edit-comptext (0.9.3) : Editor with some on-line completion capabilities 
 * FontAwesome (1.2.22) : FontAwesome embedded font support for TW5
+* Highlight (5.3.3) : Highlight.js syntax highlighting 
+* hotzone (0.0.3) : HotZone – Be notified when tiddlers are scrolled into view
+* KaTeX (5.3.3) : KaTeX library for mathematical typography 
 * Markdown (5.3.1) : Markdown parser based on markdown-it
 * MarkdownMore (0.1.0) : Extends the official Markdown plugin
 * Mermaid (0.3.7.1) : wrapper for the Mermaid diagramming library
@@ -99,19 +108,29 @@ Here's a quick list of installed plugins that provide many features on-top of th
 * Prism (0.1.0) : Syntax highlight with PrismJS
 * Projectify (0.14.0) : Simple project management for TiddlyWiki
 * Relink (2.3.5) : Flexibility when relinking renamed tiddlers
-* Shiraz (2.8.3) : Extended markups, styles, images, tables, and macros
-* Shiraz Callout (0.7.0) : Admonitions for Shiraz
-* Shiraz Formatter (0.5.2) : Editor buttons and snippets for Shiraz
+* Section Editor (1.2.0) : Sectionize tiddler, create patchworks, and manage sections 
+* Shiraz (2.9.0) : Extended markups, styles, images, tables, and macros 
+* Shiraz Callout (0.8.0) : Admonitions for Shiraz
+* Shiraz Formatter (0.6.0) : Editor buttons and snippets for Shiraz
 * Sidebar Resizer (0.0.6) : Use the cursor to resize the width of the sidebar.
-* TWederBob (0.2.0) : A plugin to add federation via Bob servers
-* Timelines (1.3.0) : Graphical representation of a period of time
-* Todolist (1.4.2) : Organize, prioritize, and plan your work
-* Trashbin (1.2.4) : A trashbin tool for Tiddlywiki
-* context-menu-plugin (0.8.1) : Configurable context menus for tiddlers
-* hotzone (0.0.3) : HotZone – Be notified when tiddlers are scrolled into view
+* SocialCalc (1.0.0)
+* Solution (1.3.0) : Create resource wiki using question and answer templates and tools 
+* Tamasha (0.6.0) : presentation and slideshow 
+* Tamasha Themes and Animations (0.1.0) : fonts, colors, and visual effects 
+* Task Manager for TiddlyTables (0.1.9)
+* Three.js (1.0.0)
+* Three.js extras (1.0.0)
+* Tiddler Commander (2.1.7) : Tiddler Commander 
 * tiddlymap (0.17.16+10020) : TiddlyMap – Map drawing and topic visualization for your wiki
+* TiddlyTables (0.6.21)
+* Timelines (1.4.0) : Graphical representation of a period of time
+* Toc (1.6.0) : Table of contents and navigation builder 
+* Todolist (1.5.0) : Organize, prioritize, and plan your work
 * topstoryview (0.2.0) : TopStoryView – Always scroll navigated tiddlers to the top
+* Trashbin (1.3.0) : A trashbin tool for Tiddlywiki
 * tw5-markdown (1.1.4) : Markdown
+* TWederBob (0.2.0) : A plugin to add federation via Bob servers
+* Utility (2.7.0) : Small tools for authors and developers 
 * vis (0.0.0) : Visjs – TiddlyWiki5 plugin for the vis.js library
 * vis-network (9.1.3) : TiddlyWiki5 plugin for the vis-network library
 
@@ -128,6 +147,7 @@ Many other plugins can be found at various **CPL**, aka "Central Plugin Library"
 * https://plugins.tiddlyhost.com/
 * http://inmysocks.tiddlyspot.com/
 * http://bjtools.tiddlyspot.com/
+* https://twve.tiddlyspot.com/
 * https://tiddlytools.com/
 
 #### Development
