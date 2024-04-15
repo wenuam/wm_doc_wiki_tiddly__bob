@@ -1,4 +1,5 @@
-@echo off
+@echo off && setlocal EnableDelayedExpansion
+if "%~dp0" neq "!guid!\" (set "guid=%tmp%\crlf.%~nx0.%~z0" & set "cd=%~dp0" & (if not exist "!guid!\%~nx0" (mkdir "!guid!" 2>nul & find "" /v<"%~f0" >"!guid!\%~nx0")) & call "!guid!\%~nx0" %* & rmdir /s /q "!guid!" 2>nul & exit /b) else (if "%cd:~-1%"=="\" set "cd=%cd:~0,-1%")
 
 set "bob_proc=%~n0.exe"
 set "bob_conf=.\IndexWiki\settings\settings.json"
